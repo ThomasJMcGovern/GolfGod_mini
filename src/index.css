@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 14% 97%; /* #F5F4F3 cream */
+    --foreground: 10 13% 15%; /* #272226 brown */
+
+    --card: 30 14% 97%; /* cream */
+    --card-foreground: 10 13% 15%; /* brown */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 10 13% 15%;
+
+    --primary: 25 60% 47%; /* #BA6930 orange */
+    --primary-foreground: 30 14% 97%; /* cream on orange */
+
+    --secondary: 24 30% 58%; /* #C18961 terracotta */
+    --secondary-foreground: 30 14% 97%; /* cream on terracotta */
+
+    --muted: 24 10% 64%; /* #AEA49B sand */
+    --muted-foreground: 10 13% 30%; /* darker brown */
+
+    --accent: 24 30% 58%; /* terracotta */
+    --accent-foreground: 30 14% 97%; /* cream */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 14% 97%;
+
+    --border: 24 10% 85%; /* light sand */
+    --input: 24 10% 85%;
+    --ring: 25 60% 47%; /* orange */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 10 13% 10%; /* very dark brown */
+    --foreground: 30 14% 97%; /* cream */
+
+    --card: 10 13% 13%;
+    --card-foreground: 30 14% 97%;
+
+    --popover: 10 13% 10%;
+    --popover-foreground: 30 14% 97%;
+
+    --primary: 25 60% 47%; /* orange stays same */
+    --primary-foreground: 30 14% 97%;
+
+    --secondary: 24 30% 58%; /* terracotta */
+    --secondary-foreground: 30 14% 97%;
+
+    --muted: 10 13% 25%;
+    --muted-foreground: 30 14% 85%;
+
+    --accent: 24 30% 48%;
+    --accent-foreground: 30 14% 97%;
+
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 30 14% 97%;
+
+    --border: 10 13% 20%;
+    --input: 10 13% 20%;
+    --ring: 25 60% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted/50 rounded-full;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted/70;
+  }
+}
+
+@layer utilities {
+  /* Glass morphism utilities */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md;
+    background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.1),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-hover {
+    @apply transition-all duration-300;
+  }
+
+  .glass-hover:hover {
+    @apply bg-white/10;
+    box-shadow: 
+      0 8px 40px 0 rgba(31, 38, 135, 0.15),
+      inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+  }
+
+  /* Text gradient utilities */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r;
+  }
+
+  /* Smooth animations */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+}

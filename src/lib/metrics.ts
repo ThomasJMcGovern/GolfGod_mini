@@ -39,7 +39,8 @@ export function computeBasics(rounds: Round[]): BasicMetrics {
   let totalFairwaysPossible = 0;
 
   rounds.forEach((round) => {
-    if (round.fairways_hit !== null && round.fairways_total !== null) {
+    if (round.fairways_hit !== null && round.fairways_hit !== undefined && 
+        round.fairways_total !== null && round.fairways_total !== undefined) {
       totalFairwaysHit += round.fairways_hit;
       totalFairwaysPossible += round.fairways_total;
     }

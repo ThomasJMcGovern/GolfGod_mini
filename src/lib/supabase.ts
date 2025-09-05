@@ -20,7 +20,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 // Helper function to validate Supabase connection
 export async function validateConnection(): Promise<boolean> {
   try {
-    const { error } = await supabase.from("player").select("id").limit(1);
+    const { error } = await supabase.from("players").select("id").limit(1);
     if (error) {
       console.error("Supabase connection error:", error);
       return false;

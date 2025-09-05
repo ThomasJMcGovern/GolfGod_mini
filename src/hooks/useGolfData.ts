@@ -3,11 +3,9 @@ import { supabase } from "../lib/supabase";
 import { log } from "../lib/logger";
 import { 
   PlayerSchema, 
-  TournamentSchema, 
-  RoundSchema,
+  TournamentSchema,
   type Player, 
-  type Tournament, 
-  type Round 
+  type Tournament
 } from "../types";
 
 /**
@@ -20,7 +18,7 @@ export function usePlayers() {
       log.info("Fetching players");
       
       const { data, error } = await supabase
-        .from("player")
+        .from("players")
         .select("*")
         .order("full_name", { ascending: true });
 
@@ -57,7 +55,7 @@ export function useTournaments() {
       log.info("Fetching tournaments");
       
       const { data, error } = await supabase
-        .from("tournament")
+        .from("tournaments")
         .select("*")
         .order("start_date", { ascending: false });
 
@@ -85,45 +83,105 @@ export function useTournaments() {
 }
 
 /**
- * Fetch rounds for a specific player and tournament
+ * Fetch tournament results for a specific player
  */
-export function useRounds(playerId: number | null, tournamentId: number | null) {
+export function usePlayerTournamentResults(playerId: number | null) {
   return useQuery({
-    queryKey: ["rounds", playerId, tournamentId],
+    queryKey: ["player-tournament-results", playerId],
     queryFn: async () => {
-      if (!playerId || !tournamentId) {
+      if (!playerId) {
         return [];
       }
 
-      log.info(`Fetching rounds for player ${playerId} in tournament ${tournamentId}`);
+      log.info(`Fetching tournament results for player ${playerId}`);
       
       const { data, error } = await supabase
-        .from("round")
-        .select("*")
+        .from("tournament_results")
+        .select(`
+          *,
+          tournaments (
+            name,
+            start_date,
+            end_date,
+            course_name,
+            course_location
+          )
+        `)
         .eq("player_id", playerId)
-        .eq("tournament_id", tournamentId)
-        .order("round_no", { ascending: true });
+        .order("tournaments(start_date)", { ascending: false });
 
       if (error) {
-        log.error("Failed to fetch rounds", error);
-        throw new Error(`Failed to fetch rounds: ${error.message}`);
+        log.error("Failed to fetch tournament results", error);
+        throw new Error(`Failed to fetch tournament results: ${error.message}`);
       }
 
-      // Validate with Zod
-      const rounds = data?.map((r) => {
-        try {
-          return RoundSchema.parse(r);
-        } catch (e) {
-          log.warn(`Invalid round data for ID ${r.id}`, e);
-          return null;
-        }
-      }).filter((r): r is Round => r !== null) || [];
-
-      log.info(`Fetched ${rounds.length} rounds`);
-      return rounds;
+      log.info(`Fetched ${data?.length || 0} tournament results`);
+      return data || [];
     },
-    enabled: !!playerId && !!tournamentId,
-    staleTime: 2 * 60 * 1000, // Consider data stale after 2 minutes
+    enabled: !!playerId,
+    staleTime: 2 * 60 * 1000,
+    retry: 2,
+  });
+}
+
+/**
+ * Fetch player statistics for a specific season
+ */
+export function usePlayerStats(playerId: number | null, season: number = 2024) {
+  return useQuery({
+    queryKey: ["player-stats", playerId, season],
+    queryFn: async () => {
+      if (!playerId) {
+        return null;
+      }
+
+      log.info(`Fetching stats for player ${playerId} in season ${season}`);
+      
+      const { data, error } = await supabase
+        .from("player_stats")
+        .select("*")
+        .eq("player_id", playerId)
+        .eq("season", season)
+        .single();
+
+      if (error) {
+        log.error("Failed to fetch player stats", error);
+        throw new Error(`Failed to fetch player stats: ${error.message}`);
+      }
+
+      log.info(`Fetched stats for player ${playerId}`);
+      return data;
+    },
+    enabled: !!playerId,
+    staleTime: 5 * 60 * 1000,
+    retry: 2,
+  });
+}
+
+/**
+ * Fetch current leaderboard from materialized view
+ */
+export function useCurrentLeaderboard() {
+  return useQuery({
+    queryKey: ["current-leaderboard"],
+    queryFn: async () => {
+      log.info("Fetching current leaderboard");
+      
+      const { data, error } = await supabase
+        .from("current_season_leaderboard")
+        .select("*")
+        .order("rank", { ascending: true })
+        .limit(50);
+
+      if (error) {
+        log.error("Failed to fetch leaderboard", error);
+        throw new Error(`Failed to fetch leaderboard: ${error.message}`);
+      }
+
+      log.info(`Fetched ${data?.length || 0} leaderboard entries`);
+      return data || [];
+    },
+    staleTime: 5 * 60 * 1000,
     retry: 2,
   });
 }
@@ -139,7 +197,7 @@ export function useConnectionHealth() {
       
       try {
         const { error } = await supabase
-          .from("player")
+          .from("players")
           .select("id")
           .limit(1);
 

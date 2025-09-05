@@ -74,9 +74,11 @@ export default function PlayerDashboard() {
                     >
                       <div className="flex items-center justify-between">
                         <span className="font-medium">{player.full_name}</span>
-                        <span className={`text-sm ${selectedPlayer === player.full_name ? 'text-green-100' : 'text-gray-500'}`}>
-                          {player.handedness === 'R' ? 'Right' : 'Left'}
-                        </span>
+                        {player.world_ranking && (
+                          <span className={`text-sm ${selectedPlayer === player.full_name ? 'text-green-100' : 'text-gray-500'}`}>
+                            #{player.world_ranking}
+                          </span>
+                        )}
                       </div>
                     </button>
                   ))}

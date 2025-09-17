@@ -1,5 +1,3 @@
-import { supabase } from "./supabase";
-
 export type LogLevel = "debug" | "info" | "warn" | "error";
 
 interface LogEntry {
@@ -13,9 +11,19 @@ class Logger {
   private enableDbLogging: boolean;
   private logQueue: LogEntry[] = [];
   private isFlashing = false;
+  private supabaseClient: any = null;
 
   constructor() {
     this.enableDbLogging = import.meta.env.VITE_ENABLE_DB_LOGGING === "true";
+  }
+
+  private async getSupabase() {
+    if (!this.supabaseClient) {
+      // Lazy load supabase to avoid circular dependency
+      const { supabase } = await import("./supabase");
+      this.supabaseClient = supabase;
+    }
+    return this.supabaseClient;
   }
 
   private async flushToDatabase() {
@@ -28,6 +36,7 @@ class Logger {
     this.logQueue = [];
 
     try {
+      const supabase = await this.getSupabase();
       const { error } = await supabase.from("client_log").insert(
         logsToFlush.map((log) => ({
           level: log.level,

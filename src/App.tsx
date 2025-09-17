@@ -6,6 +6,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import NavigationHub from './components/NavigationHub';
 import PlayerDashboard from './components/PlayerDashboard';
 import TournamentDashboard from './components/TournamentDashboard';
+import ESPNPlayerResults from './components/ESPNPlayerResults';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -25,6 +26,7 @@ function AppContent() {
         <Route path="/" element={<WelcomeScreen />} />
         <Route path="/hub" element={<NavigationHub />} />
         <Route path="/player" element={<PlayerDashboard />} />
+        <Route path="/player/:playerId" element={<ESPNPlayerResults />} />
         <Route path="/tournament" element={<TournamentDashboard />} />
         <Route path="/inside-ropes" element={
           <div className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">

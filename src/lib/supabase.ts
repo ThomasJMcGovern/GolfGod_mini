@@ -1,33 +1,15 @@
-import { createClient } from "@supabase/supabase-js";
+// Supabase Database Client
+// This file exports the Supabase client for use throughout the app
+import { supabaseClient, checkSupabaseConnection, isDemoMode, supabaseQueries } from "./supabaseClient";
 
-// Validate environment variables
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Export the Supabase client as the default database
+export const supabase = supabaseClient;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error(
-    "Missing Supabase environment variables. Please check your .env.local file."
-  );
-}
+// Export validation function
+export const validateConnection = checkSupabaseConnection;
 
-// Create Supabase client
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    persistSession: false, // No auth needed for this app
-  },
-});
+// Export demo mode flag
+export const isUsingDemoData = isDemoMode;
 
-// Helper function to validate Supabase connection
-export async function validateConnection(): Promise<boolean> {
-  try {
-    const { error } = await supabase.from("players").select("id").limit(1);
-    if (error) {
-      console.error("Supabase connection error:", error);
-      return false;
-    }
-    return true;
-  } catch (error) {
-    console.error("Failed to connect to Supabase:", error);
-    return false;
-  }
-}
+// Export query helpers
+export const queries = supabaseQueries;

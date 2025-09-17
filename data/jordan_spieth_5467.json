@@ -1,0 +1,639 @@
+{
+  "player_name": "Jordan Spieth",
+  "espn_id": 5467,
+  "scraped_at": "2025-09-16T21:49:37.702096",
+  "years": [
+    {
+      "year": 2022,
+      "tournament_count": 23,
+      "tournaments": [
+        {
+          "date": "10/14-10/17",
+          "tournament": "THE CJ CUP @ SUMMIT",
+          "course": "The Summit Club",
+          "position": "T18",
+          "score": "270(-18)",
+          "earnings": "$116,331",
+          "rounds": []
+        },
+        {
+          "date": "12/2-12/5",
+          "tournament": "Hero World Challenge",
+          "course": "Albany GC",
+          "position": "20",
+          "score": "294(+6)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "1/6-1/9",
+          "tournament": "Sentry Tournament of Champions",
+          "course": "Kapalua Resort (Plantation Course)",
+          "position": "T21",
+          "score": "274(-18)",
+          "earnings": "$119,000",
+          "rounds": []
+        },
+        {
+          "date": "1/26-1/29",
+          "tournament": "Farmers Insurance Open",
+          "course": "Torrey Pines (South Course)",
+          "position": "Missed Cut",
+          "score": "148(+4)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "2/3-2/6",
+          "tournament": "AT&T Pebble Beach Pro-Am",
+          "course": "Pebble Beach Golf Links",
+          "position": "2",
+          "score": "270(-17)",
+          "earnings": "$948,300",
+          "rounds": []
+        },
+        {
+          "date": "2/10-2/13",
+          "tournament": "WM Phoenix Open",
+          "course": "TPC Scottsdale (Stadium Course)",
+          "position": "T60",
+          "score": "284(E)",
+          "earnings": "$18,368",
+          "rounds": []
+        },
+        {
+          "date": "2/17-2/20",
+          "tournament": "The Genesis Invitational",
+          "course": "Riviera Country Club",
+          "position": "T26",
+          "score": "278(-6)",
+          "earnings": "$85,800",
+          "rounds": []
+        },
+        {
+          "date": "3/10-3/14",
+          "tournament": "THE PLAYERS Championship",
+          "course": "TPC Sawgrass (THE PLAYERS Stadium Course)",
+          "position": "Missed Cut",
+          "score": "151(+7)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "3/31-4/3",
+          "tournament": "Valero Texas Open",
+          "course": "TPC San Antonio (Oaks Course)",
+          "position": "T35",
+          "score": "283(-5)",
+          "earnings": "$41,925",
+          "rounds": []
+        },
+        {
+          "date": "4/7-4/10",
+          "tournament": "Masters Tournament",
+          "course": "Augusta National Golf Club",
+          "position": "Missed Cut",
+          "score": "150(+6)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "4/14-4/17",
+          "tournament": "RBC Heritage",
+          "course": "Harbour Town Golf Links",
+          "position": "1-x",
+          "score": "271(-13)",
+          "earnings": "$1,440,000",
+          "rounds": []
+        },
+        {
+          "date": "5/12-5/15",
+          "tournament": "AT&T Byron Nelson",
+          "course": "TPC Craig Ranch",
+          "position": "2",
+          "score": "263(-25)",
+          "earnings": "$991,900",
+          "rounds": []
+        },
+        {
+          "date": "5/19-5/22",
+          "tournament": "PGA Championship",
+          "course": "Southern Hills Country Club",
+          "position": "T34",
+          "score": "284(+4)",
+          "earnings": "$61,607",
+          "rounds": []
+        },
+        {
+          "date": "5/26-5/29",
+          "tournament": "Charles Schwab Challenge",
+          "course": "Colonial Country Club",
+          "position": "T7",
+          "score": "275(-5)",
+          "earnings": "$246,540",
+          "rounds": []
+        },
+        {
+          "date": "6/2-6/5",
+          "tournament": "the Memorial Tournament pres. by Workday",
+          "course": "Muirfield Village Golf Club",
+          "position": "T18",
+          "score": "286(-2)",
+          "earnings": "$142,800",
+          "rounds": []
+        },
+        {
+          "date": "6/16-6/19",
+          "tournament": "U.S. Open",
+          "course": "The Country Club",
+          "position": "T37",
+          "score": "287(+7)",
+          "earnings": "$75,916",
+          "rounds": []
+        },
+        {
+          "date": "6/23-6/26",
+          "tournament": "Travelers Championship",
+          "course": "TPC River Highlands",
+          "position": "Missed Cut",
+          "score": "141(+1)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "7/7-7/10",
+          "tournament": "Genesis Scottish Open",
+          "course": "The Renaissance Club",
+          "position": "T10",
+          "score": "278(-2)",
+          "earnings": "$157,800",
+          "rounds": []
+        },
+        {
+          "date": "7/14-7/17",
+          "tournament": "The Open",
+          "course": "St Andrews Links (Old Course)",
+          "position": "T8",
+          "score": "276(-12)",
+          "earnings": "$325,667",
+          "rounds": []
+        },
+        {
+          "date": "8/11-8/14",
+          "tournament": "FedEx St. Jude Championship",
+          "course": "TPC Southwind",
+          "position": "Missed Cut",
+          "score": "144(+4)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "8/18-8/21",
+          "tournament": "BMW Championship",
+          "course": "Wilmington Country Club (South Course)",
+          "position": "T19",
+          "score": "278(-6)",
+          "earnings": "$188,250",
+          "rounds": []
+        },
+        {
+          "date": "8/25-8/28",
+          "tournament": "TOUR Championship",
+          "course": "East Lake Golf Club",
+          "position": "T13",
+          "score": "270(-12)",
+          "earnings": "$825,000",
+          "rounds": []
+        },
+        {
+          "date": "7/4-7/5",
+          "tournament": "JP McManus Pro-Am",
+          "course": "Adare Manor Hotel & Golf Resort",
+          "position": "Disqualified",
+          "score": "(E)",
+          "earnings": "",
+          "rounds": [
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "tournament_count": 23,
+      "tournaments": [
+        {
+          "date": "10/20-10/23",
+          "tournament": "THE CJ CUP in South Carolina",
+          "course": "Congaree Golf Club",
+          "position": "T52",
+          "score": "285(+1)",
+          "earnings": "$21,840",
+          "rounds": []
+        },
+        {
+          "date": "12/1-12/4",
+          "tournament": "Hero World Challenge",
+          "course": "Albany GC",
+          "position": "15",
+          "score": "289(+1)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "1/5-1/8",
+          "tournament": "Sentry Tournament of Champions",
+          "course": "Kapalua Resort (Plantation Course)",
+          "position": "T13",
+          "score": "273(-19)",
+          "earnings": "$265,000",
+          "rounds": []
+        },
+        {
+          "date": "1/12-1/15",
+          "tournament": "Sony Open in Hawaii",
+          "course": "Waialae Country Club",
+          "position": "Missed Cut",
+          "score": "139(-1)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "2/2-2/6",
+          "tournament": "AT&T Pebble Beach Pro-Am",
+          "course": "Pebble Beach Golf Links",
+          "position": "T63",
+          "score": "287(E)",
+          "earnings": "$19,620",
+          "rounds": []
+        },
+        {
+          "date": "2/9-2/12",
+          "tournament": "WM Phoenix Open",
+          "course": "TPC Scottsdale (Stadium Course)",
+          "position": "T6",
+          "score": "273(-11)",
+          "earnings": "$652,500",
+          "rounds": []
+        },
+        {
+          "date": "2/16-2/19",
+          "tournament": "The Genesis Invitational",
+          "course": "Riviera Country Club",
+          "position": "Missed Cut",
+          "score": "144(+2)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "3/2-3/5",
+          "tournament": "Arnold Palmer Invitational pres. by Mastercard",
+          "course": "Arnold Palmer's Bay Hill Club & Lodge",
+          "position": "T4",
+          "score": "281(-7)",
+          "earnings": "$800,000",
+          "rounds": []
+        },
+        {
+          "date": "3/9-3/12",
+          "tournament": "THE PLAYERS Championship",
+          "course": "TPC Sawgrass (THE PLAYERS Stadium Course)",
+          "position": "T19",
+          "score": "282(-6)",
+          "earnings": "$275,000",
+          "rounds": []
+        },
+        {
+          "date": "3/16-3/19",
+          "tournament": "Valspar Championship",
+          "course": "Innisbrook Resort (Copperhead Course)",
+          "position": "T3",
+          "score": "276(-8)",
+          "earnings": "$477,900",
+          "rounds": []
+        },
+        {
+          "date": "4/6-4/9",
+          "tournament": "Masters Tournament",
+          "course": "Augusta National Golf Club",
+          "position": "T4",
+          "score": "281(-7)",
+          "earnings": "$744,000",
+          "rounds": []
+        },
+        {
+          "date": "4/13-4/16",
+          "tournament": "RBC Heritage",
+          "course": "Harbour Town Golf Links",
+          "position": "2-y",
+          "score": "267(-17)",
+          "earnings": "$2,180,000",
+          "rounds": []
+        },
+        {
+          "date": "5/4-5/7",
+          "tournament": "Wells Fargo Championship",
+          "course": "Quail Hollow Club",
+          "position": "Missed Cut",
+          "score": "149(+7)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "5/18-5/21",
+          "tournament": "PGA Championship",
+          "course": "Oak Hill Country Club",
+          "position": "T29",
+          "score": "285(+5)",
+          "earnings": "$90,136",
+          "rounds": []
+        },
+        {
+          "date": "5/25-5/28",
+          "tournament": "Charles Schwab Challenge",
+          "course": "Colonial Country Club",
+          "position": "Missed Cut",
+          "score": "144(+4)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "6/1-6/4",
+          "tournament": "The Memorial Tournament pres. by Workday",
+          "course": "Muirfield Village Golf Club",
+          "position": "T5",
+          "score": "284(-4)",
+          "earnings": "$772,500",
+          "rounds": []
+        },
+        {
+          "date": "6/15-6/18",
+          "tournament": "U.S. Open",
+          "course": "Los Angeles Country Club",
+          "position": "Missed Cut",
+          "score": "143(+3)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "7/13-7/16",
+          "tournament": "Genesis Scottish Open",
+          "course": "The Renaissance Club",
+          "position": "Missed Cut",
+          "score": "141(+1)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "7/20-7/23",
+          "tournament": "The Open",
+          "course": "Royal Liverpool GC",
+          "position": "T23",
+          "score": "284(E)",
+          "earnings": "$121,500",
+          "rounds": []
+        },
+        {
+          "date": "8/10-8/13",
+          "tournament": "FedEx St. Jude Championship",
+          "course": "TPC Southwind",
+          "position": "T6",
+          "score": "269(-11)",
+          "earnings": "$584,286",
+          "rounds": []
+        },
+        {
+          "date": "8/17-8/20",
+          "tournament": "BMW Championship",
+          "course": "Olympia Fields Country Club",
+          "position": "T34",
+          "score": "281(+1)",
+          "earnings": "$122,000",
+          "rounds": []
+        },
+        {
+          "date": "8/24-8/27",
+          "tournament": "TOUR Championship",
+          "course": "East Lake Golf Club",
+          "position": "27",
+          "score": "281(+1)",
+          "earnings": "$530,000",
+          "rounds": []
+        },
+        {
+          "date": "11/30-12/3",
+          "tournament": "Hero World Challenge",
+          "course": "Albany GC",
+          "position": "6",
+          "score": "274(-14)",
+          "earnings": "",
+          "rounds": []
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "tournament_count": 22,
+      "tournaments": [
+        {
+          "date": "1/4-1/7",
+          "tournament": "The Sentry",
+          "course": "Kapalua Resort (Plantation Course)",
+          "position": "3",
+          "score": "265(-27)",
+          "earnings": "$1,360,000",
+          "rounds": []
+        },
+        {
+          "date": "2/1-2/3",
+          "tournament": "AT&T Pebble Beach Pro-Am",
+          "course": "Pebble Beach Golf Links",
+          "position": "T39",
+          "score": "210(-6)",
+          "earnings": "$70,125",
+          "rounds": []
+        },
+        {
+          "date": "2/8-2/11",
+          "tournament": "WM Phoenix Open",
+          "course": "TPC Scottsdale (Stadium Course)",
+          "position": "T6",
+          "score": "270(-14)",
+          "earnings": "$308,000",
+          "rounds": []
+        },
+        {
+          "date": "2/15-2/18",
+          "tournament": "The Genesis Invitational",
+          "course": "Riviera Country Club",
+          "position": "Disqualified",
+          "score": "139(-3)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "3/7-3/10",
+          "tournament": "Arnold Palmer Invitational pres. by Mastercard",
+          "course": "Arnold Palmer's Bay Hill Club & Lodge",
+          "position": "T30",
+          "score": "289(+1)",
+          "earnings": "$123,500",
+          "rounds": []
+        },
+        {
+          "date": "3/14-3/17",
+          "tournament": "THE PLAYERS Championship",
+          "course": "TPC Sawgrass (THE PLAYERS Stadium Course)",
+          "position": "Missed Cut",
+          "score": "146(+2)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "3/21-3/24",
+          "tournament": "Valspar Championship",
+          "course": "Innisbrook Resort (Copperhead Course)",
+          "position": "Missed Cut",
+          "score": "143(+1)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "4/4-4/7",
+          "tournament": "Valero Texas Open",
+          "course": "TPC San Antonio (Oaks Course)",
+          "position": "T10",
+          "score": "282(-6)",
+          "earnings": "$223,100",
+          "rounds": []
+        },
+        {
+          "date": "4/11-4/14",
+          "tournament": "Masters Tournament",
+          "course": "Augusta National Golf Club",
+          "position": "Missed Cut",
+          "score": "153(+9)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "4/18-4/22",
+          "tournament": "RBC Heritage",
+          "course": "Harbour Town Golf Links",
+          "position": "T39",
+          "score": "278(-6)",
+          "earnings": "$86,500",
+          "rounds": []
+        },
+        {
+          "date": "5/2-5/5",
+          "tournament": "THE CJ CUP Byron Nelson",
+          "course": "TPC Craig Ranch",
+          "position": "Missed Cut",
+          "score": "138(-4)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "5/9-5/12",
+          "tournament": "Wells Fargo Championship",
+          "course": "Quail Hollow Club",
+          "position": "T29",
+          "score": "286(+2)",
+          "earnings": "$130,500",
+          "rounds": []
+        },
+        {
+          "date": "5/16-5/19",
+          "tournament": "PGA Championship",
+          "course": "Valhalla Golf Club",
+          "position": "T43",
+          "score": "278(-6)",
+          "earnings": "$48,969",
+          "rounds": []
+        },
+        {
+          "date": "5/23-5/26",
+          "tournament": "Charles Schwab Challenge",
+          "course": "Colonial Country Club",
+          "position": "T37",
+          "score": "281(+1)",
+          "earnings": "$38,675",
+          "rounds": []
+        },
+        {
+          "date": "6/6-6/9",
+          "tournament": "the Memorial Tournament pres. by Workday",
+          "course": "Muirfield Village Golf Club",
+          "position": "Missed Cut",
+          "score": "149(+5)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "6/13-6/16",
+          "tournament": "U.S. Open",
+          "course": "Pinehurst No. 2",
+          "position": "T41",
+          "score": "288(+8)",
+          "earnings": "$72,305",
+          "rounds": []
+        },
+        {
+          "date": "6/20-6/23",
+          "tournament": "Travelers Championship",
+          "course": "TPC River Highlands",
+          "position": "T63",
+          "score": "278(-2)",
+          "earnings": "$41,500",
+          "rounds": []
+        },
+        {
+          "date": "7/4-7/7",
+          "tournament": "John Deere Classic",
+          "course": "TPC Deere Run",
+          "position": "T26",
+          "score": "269(-15)",
+          "earnings": "$64,200",
+          "rounds": []
+        },
+        {
+          "date": "7/11-7/14",
+          "tournament": "Genesis Scottish Open",
+          "course": "The Renaissance Club",
+          "position": "Missed Cut",
+          "score": "139(-1)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "7/18-7/21",
+          "tournament": "The Open",
+          "course": "Royal Troon Golf Course",
+          "position": "T25",
+          "score": "289(+5)",
+          "earnings": "$124,617",
+          "rounds": []
+        },
+        {
+          "date": "8/8-8/12",
+          "tournament": "Wyndham Championship",
+          "course": "Sedgefield Country Club",
+          "position": "Missed Cut",
+          "score": "138(-2)",
+          "earnings": "",
+          "rounds": []
+        },
+        {
+          "date": "8/15-8/18",
+          "tournament": "FedEx St. Jude Championship",
+          "course": "TPC Southwind",
+          "position": "T68",
+          "score": "289(+9)",
+          "earnings": "$40,600",
+          "rounds": []
+        }
+      ]
+    }
+  ]
+}

@@ -113,12 +113,12 @@ export default function PlayerDashboard() {
                 {/* Player Header */}
                 <div className="bg-white rounded-xl shadow-lg p-6">
                   <div className="flex items-start justify-between">
-                    <div>
+                    <div className="flex-grow">
                       <h2 className="text-3xl font-bold text-gray-900 mb-2">
                         {selectedPlayer}
                       </h2>
                       {playerProfile && (
-                        <div className="grid grid-cols-2 gap-4 text-sm">
+                        <div className="grid grid-cols-2 gap-4 text-sm mb-4">
                           <div>
                             <span className="text-gray-600">World Rank:</span>
                             <span className="ml-2 font-bold">#{playerProfile.worldRanking}</span>
@@ -137,6 +137,19 @@ export default function PlayerDashboard() {
                           </div>
                         </div>
                       )}
+
+                      {/* ESPN Results Button */}
+                      <button
+                        onClick={() => {
+                          const selectedPlayerData = players.find(p => p.full_name === selectedPlayer);
+                          if (selectedPlayerData) {
+                            navigate(`/player/${selectedPlayerData.id}`);
+                          }
+                        }}
+                        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm"
+                      >
+                        View ESPN-Style Results →
+                      </button>
                     </div>
                     <div className="text-4xl">👤</div>
                   </div>

@@ -1,0 +1,14 @@
+{
+  "session_id": "8c1e6ddc-a818-4890-8e33-3a3471a8bfc0",
+  "prompts": [
+    "I wanna see if the voice agent hook works, can you try and read file:///Users/tjmcgovern/claude-code-hooks-mastery/ai_docs/anthropic_custom_slash_commands.md so i can check",
+    "do something the requires my permission",
+    "delete that",
+    "make a plan",
+    "currently the global claude code settings are not the same as the settings that are in this project, I dont have the same hooks set up. how can I get it",
+    "/Users/tjmcgovern/.claude/hooks has the hooks I want to use",
+    "how to set up project cc settings?",
+    "how to set up project cc settings? locally per project?"
+  ],
+  "agent_name": "Oracle"
+}

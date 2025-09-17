@@ -282,11 +282,21 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // Helper function to convert player to profile
 const playerToProfile = (player: Player): PlayerProfile => ({
-  ...player,
-  country: player.country || undefined,
-  turned_pro: player.turned_pro || undefined,
-  world_ranking: player.world_ranking || undefined,
-  fedex_ranking: player.fedex_ranking || undefined,
+  id: player.id,
+  full_name: player.full_name,
+  country: player.country === null ? undefined : player.country,
+  birthdate: player.birthdate === null ? undefined : player.birthdate,
+  birthplace: player.birthplace === null ? undefined : player.birthplace,
+  college: player.college === null ? undefined : player.college,
+  swing_type: player.swing_type === null ? undefined : player.swing_type,
+  height: player.height === null ? undefined : player.height,
+  weight: player.weight === null ? undefined : player.weight,
+  turned_pro: player.turned_pro === null ? undefined : player.turned_pro,
+  world_ranking: player.world_ranking === null ? undefined : player.world_ranking,
+  fedex_ranking: player.fedex_ranking === null ? undefined : player.fedex_ranking,
+  photo_url: player.photo_url === null ? undefined : player.photo_url,
+  created_at: player.created_at,
+  updated_at: player.updated_at,
   age: player.birthdate ? new Date().getFullYear() - new Date(player.birthdate).getFullYear() : undefined,
   tournaments_last_year: 15,
   career_earnings: 25000000,
@@ -315,7 +325,7 @@ export const mockDb = {
           return { data: null, error: { message: "Not found" } };
         },
         eq: (nextColumn: string, nextValue: unknown) => ({
-          order: (orderColumn: string, options?: { ascending?: boolean }) => ({
+          order: (orderColumn: string, _options?: { ascending?: boolean }) => ({
             then: async (callback: (result: { data: ESPNPlayerTournamentResult[], error: null }) => void) => {
               await delay(100);
               log.info(`Mock query: ${table}.select(${columns}).eq(${column}, ${value}).eq(${nextColumn}, ${nextValue}).order(${orderColumn})`);
@@ -347,7 +357,7 @@ export const mockDb = {
             }
           }
         }),
-        order: (orderColumn: string, options?: { ascending?: boolean }) => ({
+        order: (orderColumn: string, _options?: { ascending?: boolean }) => ({
           then: async (callback: (result: { data: ESPNPlayerTournamentResult[], error: null }) => void) => {
             await delay(100);
             log.info(`Mock query: ${table}.select(${columns}).eq(${column}, ${value}).order(${orderColumn})`);
@@ -375,7 +385,7 @@ export const mockDb = {
           }
         }
       }),
-      order: (column: string, options?: { ascending?: boolean }) => ({
+      order: (column: string, _options?: { ascending?: boolean }) => ({
         then: async (callback: (result: { data: Player[] | Tournament[], error: null }) => void) => {
           await delay(100);
           log.info(`Mock query: ${table}.select(${columns}).order(${column})`);
@@ -450,7 +460,7 @@ export function getMockPlayerProfile(playerId: number): PlayerProfile | null {
   const player = mockPlayers.find(p => p.id === playerId);
   if (!player) return null;
 
-  return mockPlayerProfiles[playerId] || null;
+  return playerToProfile(player);
 }
 
 export function getMockTournamentResults(): ESPNPlayerTournamentResult[] {

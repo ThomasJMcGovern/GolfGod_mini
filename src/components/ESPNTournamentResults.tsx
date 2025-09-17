@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Card } from './ui/card';
-import { Badge } from './ui/badge';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
-import { type TournamentResultsByTour, type ESPNPlayerTournamentResult } from '../types';
+import { type TournamentResultsByTour } from '../types';
 
 interface ESPNTournamentResultsProps {
   tournamentGroups: TournamentResultsByTour[];

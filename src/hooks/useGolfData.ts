@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { supabase, validateConnection } from "../lib/supabase";
 import { log } from "../lib/logger";
 import {
-  PlayerSchema,
   TournamentSchema,
   type Player,
   type Tournament,
@@ -10,7 +9,7 @@ import {
   type ESPNPlayerTournamentResult,
   type TournamentResultsByTour
 } from "../types";
-import { getMockPlayers, getMockTournaments, getMockPlayerProfile, getMockTournamentResults } from "../lib/mockDataProvider";
+import { getMockPlayers, getMockPlayerProfile } from "../lib/mockDataProvider";
 
 /**
  * Fetch all players
@@ -261,9 +260,6 @@ export function usePlayerProfile(playerId: number | null) {
       // Calculate stats from tournament results
       const tournaments_played = stats?.length || 0;
       const wins = stats?.filter(s => s.position === '1').length || 0;
-      const top_10s = stats?.filter(s => s.position_numeric && s.position_numeric <= 10).length || 0;
-      const top_25s = stats?.filter(s => s.position_numeric && s.position_numeric <= 25).length || 0;
-      const cuts_made = stats?.filter(s => s.status === 'completed').length || 0;
       const total_earnings = stats?.reduce((sum, s) => sum + (s.earnings_usd || 0), 0) || 0;
 
       // Combine into PlayerProfile format
@@ -281,15 +277,6 @@ export function usePlayerProfile(playerId: number | null) {
         world_ranking: player.world_ranking || null,
         fedex_ranking: player.fedex_ranking || null,
         photo_url: player.photo_url || null,
-
-        // Add calculated season stats
-        tournaments_played,
-        wins,
-        top_10s,
-        top_25s,
-        cuts_made,
-        total_earnings,
-        fedex_points: 0, // Not in existing schema
 
         // Add required fields for ESPNPlayerHeader
         tournaments_last_year: tournaments_played,
@@ -386,6 +373,9 @@ export function usePlayerTournamentResultsByTour(playerId: number | null, year?:
 
         return {
           player_id: result.player_id,
+          player_name: '',  // Will be filled from player data if needed
+          country: '',
+          photo_url: '',
           tournament_id: result.tournament_id || 0,
           year: result.season,
           date_range: result.date_range,
@@ -401,8 +391,8 @@ export function usePlayerTournamentResultsByTour(playerId: number | null, year?:
           earnings_display: result.earnings_display || (result.earnings_usd ? `$${result.earnings_usd.toLocaleString()}` : '--'),
           status: result.status,
           tour_type: 'PGA TOUR', // Default since not in existing schema
-          start_date: null,
-          end_date: null,
+          start_date: '',
+          end_date: '',
           tournament_url: null,
           rounds: rounds,
           rounds_detail: rounds.length > 0 ? { r1: rounds[0], r2: rounds[1], r3: rounds[2], r4: rounds[3] } : null,
@@ -459,18 +449,3 @@ export function usePlayerTournamentYears(playerId: number | null) {
   });
 }
 
-// Helper function to generate tour display names
-function getTourDisplayName(tourType: string, year: number): string {
-  switch (tourType) {
-    case 'PGA_TOUR':
-      return `${year} PGA TOUR Tournaments`;
-    case 'OLYMPICS':
-      return `${year} OLY Golf (M) Tournaments`;
-    case 'EUROPEAN_TOUR':
-      return `${year} DP World Tour Tournaments`;
-    case 'LIV':
-      return `${year} LIV Golf Tournaments`;
-    default:
-      return `${year} ${tourType} Tournaments`;
-  }
-}

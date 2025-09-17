@@ -44,7 +44,7 @@ export const initializeDatabase = () => {
           persistSession: false,
         },
         db: {
-          schema: 'public',
+          schema: 'public' as any,
         },
         global: {
           headers: {
@@ -74,7 +74,7 @@ export const initializeDatabase = () => {
         persistSession: false, // Disable auth for direct database connection
       },
       db: {
-        schema: 'public',
+        schema: 'public' as any,
       },
       global: {
         headers: {
@@ -96,7 +96,7 @@ export const initializeDatabase = () => {
         persistSession: false,
       },
       db: {
-        schema: 'public',
+        schema: 'public' as any,
       },
       global: {
         headers: {

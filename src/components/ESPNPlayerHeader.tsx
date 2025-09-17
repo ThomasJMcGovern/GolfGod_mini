@@ -1,5 +1,4 @@
-import React from 'react';
-import { Card } from './ui/card';
+// Remove unused imports
 import { Badge } from './ui/badge';
 import { type PlayerProfile } from '../types';
 

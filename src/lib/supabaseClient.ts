@@ -1,6 +1,5 @@
 // Supabase Client Configuration for ESPN-style Golf Data
 import { createClient } from '@supabase/supabase-js';
-import type { Database } from '../types/database.types';
 
 // Get environment variables with validation
 const getSupabaseConfig = () => {
